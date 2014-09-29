@@ -12,11 +12,11 @@ package discountstrategyproject;
 public class DiscountNone implements DiscountStrategy{
     private double discount = 0.0;
     @Override
-    public double getDiscount(){
+    public final double getDiscount(){
         return discount;
     }
     @Override
-    public void setDiscount(double discount){
+    public final void setDiscount(double discount){
         this.discount = discount;
     }
 }

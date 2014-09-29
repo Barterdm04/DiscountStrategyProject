@@ -23,19 +23,19 @@ public class Customer {
         custNo = " ";
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         this.name = name;
     }
 
-    public String getCustNo() {
+    public final String getCustNo() {
         return custNo;
     }
 
-    public void setCustNo(String custNo) {
+    public final void setCustNo(String custNo) {
         this.custNo = custNo;
     }
     

@@ -6,9 +6,12 @@
 
 package discountstrategyproject;
 
-/**
- *
- * @author dbarter1
+/**This class represents a simulation of a physical store in a retail sales organization
+ * 
+ *Note: JavaDoc documentation is incomplete!
+ * 
+ * @author Dylan Barter
+ * @version 1.00
  */
 public class Store {
     private String storeNo;
@@ -19,19 +22,19 @@ public class Store {
         this.zipCode = zipCode;
     }
 
-    public String getStoreNo() {
+    public final String getStoreNo() {
         return storeNo;
     }
 
-    public void setStoreNo(String storeNo) {
+    public final void setStoreNo(String storeNo) {
         this.storeNo = storeNo;
     }
 
-    public String getZipCode() {
+    public final String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(String zipCode) {
+    public final void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
     

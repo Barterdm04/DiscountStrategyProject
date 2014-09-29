@@ -1,9 +1,12 @@
 
 package discountstrategyproject;
 
-/**
- *
- * @author dbarter1
+/**This class represents a simulation of a product in a retail sales organization
+ * 
+ *Note: JavaDoc documentation is incomplete!
+ * 
+ * @author Dylan Barter
+ * @version 1.00
  */
 public class Product {
     private String prodID;
@@ -21,38 +24,53 @@ public class Product {
         this.DiscountType = Discount;
     }
 
-    public String getProdID() {
+    public final String getProdID() {
         return prodID;
     }
 
-    public void setProdID(String prodID) {
+    /**
+     * Sets the id. This method is not yet validated
+     * @param prodID -the unique identifier for this product
+     * @throws IllegalArgumentException if prodID is null or empty
+     */
+    public final void setProdID(String prodID) {
+        if(prodID == null || prodID.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         this.prodID = prodID;
     }
 
-    public String getProdDesc() {
+    public final String getProdDesc() {
         return prodDesc;
     }
 
-    public void setProdDesc(String prodDesc) {
+    public final void setProdDesc(String prodDesc) {
+        if(prodDesc == null || prodDesc.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         this.prodDesc = prodDesc;
     }
 
-    public double getUnitPrice() {
+    public final double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(double unitPrice) {
+    public final void setUnitPrice(double unitPrice) {
+        if(unitPrice < 0) {
+            throw new IllegalArgumentException();
+        }
         this.unitPrice = unitPrice;
     }
 
-    public double getDiscount() {
+    public final double getDiscount() {
         return DiscountType.getDiscount();
     }
 
-    public DiscountStrategy getDiscountType(){
+    public final DiscountStrategy getDiscountType(){
         return DiscountType;
     }
-    public void setDiscountType(DiscountStrategy DiscountType) {
+    
+    public final void setDiscountType(DiscountStrategy DiscountType) {
         this.DiscountType = DiscountType;
     }
     

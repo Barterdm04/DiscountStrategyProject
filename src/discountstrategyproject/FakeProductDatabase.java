@@ -6,11 +6,15 @@
 
 package discountstrategyproject;
 
-/**
- *
- * @author dbarter1
+/**This class represents a simulation of a product and customer database in a retail sales organization
+ * 
+ *Note: JavaDoc documentation is incomplete!
+ * 
+ * @author Dylan Barter
+ * @version 1.00
  */
-public class FakeDatabase implements DataAccessStrategy{
+
+public class FakeProductDatabase{
     private DiscountStrategy NoDisc = new DiscountNone();
     private DiscountStrategy FlatDisc = new DiscountFlatRate();
     
@@ -20,7 +24,7 @@ public class FakeDatabase implements DataAccessStrategy{
         new Product("0102", "Nike T-Shirt", 19.99, FlatDisc)    
     };
     
-    public Product findProduct(String prodID){
+    public final Product findProduct(String prodID){
         Product productFound = new Product();
         for(int i = 0; i < products.length; i++){
             if (prodID.equals(products[i].getProdID())){

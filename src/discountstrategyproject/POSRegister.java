@@ -6,31 +6,34 @@
 
 package discountstrategyproject;
 
-/**
- *
- * @author dbarter1
+/**This class represents a simulation of a Point of Sales Terminal in a retail sales organization
+ * 
+ *Note: JavaDoc documentation is incomplete!
+ * 
+ * @author Dylan Barter
+ * @version 1.00
  */
 public class POSRegister {
     private ReceiptStrategy receipt;
-    private FakeDatabase database = new FakeDatabase();
+    private FakeProductDatabase database = new FakeProductDatabase();
     private LineItem lineItem;
     
-    public void startNewSale(Customer customer, Store store){
+    public final void startNewSale(Customer customer, Store store){
         receipt = new ReceiptConsole();
         receipt.setCustomer(customer);
         receipt.setStore(store);
     }
     
-    public void startNewSale(Store store){
+    public final void startNewSale(Store store){
         receipt = new ReceiptConsole();
         receipt.setStore(store);
     }
     
-    public void addItemToSale(String scannedItem, int quantity){
+    public final void addItemToSale(String scannedItem, int quantity){
         lineItem = new LineItem(database.findProduct(scannedItem), quantity);
         receipt.addLineItem(lineItem);
     }
-    public void finalizeSale(){
+    public final void finalizeSale(){
         receipt.outputReceipt();
     }
 }

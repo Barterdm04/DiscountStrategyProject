@@ -16,11 +16,11 @@ public class DiscountFlatRate implements DiscountStrategy{
         discount = .1;
     }
     @Override
-    public double getDiscount(){
+    public final double getDiscount(){
         return discount;
     }
     @Override
-    public void setDiscount(double discount){
+    public final void setDiscount(double discount){
         this.discount = discount;
     }
 }

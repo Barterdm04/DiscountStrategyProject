@@ -8,9 +8,12 @@ package discountstrategyproject;
 
 import java.text.NumberFormat;
 
-/**
- *
- * @author dbarter1
+/**This class represents a simulation of a receipt object for a retail sales organization
+ * 
+ *Note: JavaDoc documentation is incomplete!
+ * 
+ * @author Dylan Barter
+ * @version 1.00
  */
 public class ReceiptConsole implements ReceiptStrategy{
     private Customer customer;
@@ -24,36 +27,36 @@ public class ReceiptConsole implements ReceiptStrategy{
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public final void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public Store getStore() {
+    public final Store getStore() {
         return store;
     }
 
-    public void setStore(Store store) {
+    public final void setStore(Store store) {
         this.store = store;
     }
 
-    public LineItem[] getLineItems() {
+    public final LineItem[] getLineItems() {
         return lineItems;
     }
 
     @Override
-    public void addLineItem(LineItem lineItem) {
+    public final void addLineItem(LineItem lineItem) {
         addToArray(lineItem);
     }
 
-    public String getThankYou() {
+    public final String getThankYou() {
         return thankYou;
     }
 
-    public void setThankYou(String thankYou) {
+    public final void setThankYou(String thankYou) {
         this.thankYou = thankYou;
     }
     
-    private void addToArray(final LineItem item) {        
+    private final void addToArray(final LineItem item) {        
         // needs validation        
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length); 
@@ -62,7 +65,7 @@ public class ReceiptConsole implements ReceiptStrategy{
     }
     
     @Override
-    public void outputReceipt(){
+    public final void outputReceipt(){
         System.out.println("Store No: " + store.getStoreNo());
         System.out.println("Store Zip: " + store.getZipCode());
         System.out.println("Customer Name: " + customer.getName());

@@ -15,7 +15,7 @@ import java.text.NumberFormat;
 public class LineItem {
     private Product product;
     private int quantity;
-    NumberFormat nf = NumberFormat.getCurrencyInstance();
+    //NumberFormat nf = NumberFormat.getCurrencyInstance();
     
     public LineItem(Product product, int quantity) {
         this.product = product;
@@ -24,28 +24,28 @@ public class LineItem {
     public LineItem(){  
     }
     
-    public String getProdID(){
+    public final String getProdID(){
         return product.getProdID();
     }
     
-    public String getProdDesc(){
+    public final String getProdDesc(){
         return product.getProdDesc();
     }
-    public double getUnitPrice(){
+    public final double getUnitPrice(){
         return product.getUnitPrice();
     }
     
-    public double getSubTotal(){
+    public final double getSubTotal(){
         double subtotal = quantity * product.getUnitPrice();
         subtotal -= (subtotal * product.getDiscount());
         return subtotal;
     }
     
-    public double getAmountSaved(){
+    public final double getAmountSaved(){
         return (quantity * product.getUnitPrice() * product.getDiscount());
     }
    
-    public int getQuantity() {
+    public final int getQuantity() {
         return quantity;
     }
 
