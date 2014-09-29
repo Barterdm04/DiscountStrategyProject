@@ -13,9 +13,10 @@ package discountstrategyproject;
  * @author Dylan Barter
  * @version 1.00
  */
+
 public class POSRegister {
     private ReceiptStrategy receipt;
-    private FakeProductDatabase database = new FakeProductDatabase();
+    private FakeDatabase database = new FakeDatabase();
     private LineItem lineItem;
     
     public final void startNewSale(Customer customer, Store store){

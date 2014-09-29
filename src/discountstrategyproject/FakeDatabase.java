@@ -14,7 +14,7 @@ package discountstrategyproject;
  * @version 1.00
  */
 
-public class FakeProductDatabase{
+public class FakeDatabase{
     private DiscountStrategy NoDisc = new DiscountNone();
     private DiscountStrategy FlatDisc = new DiscountFlatRate();
     
