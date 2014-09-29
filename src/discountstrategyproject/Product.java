@@ -13,6 +13,7 @@ public class Product {
     
     public Product(){ 
     }
+    
     public Product(String prodID, String prodDesc, double unitPrice, DiscountStrategy Discount){
         this.prodID = prodID;
         this.prodDesc = prodDesc;

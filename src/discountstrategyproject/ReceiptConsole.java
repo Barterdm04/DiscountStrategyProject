@@ -6,16 +6,18 @@
 
 package discountstrategyproject;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author dbarter1
  */
-public class RecieptConsole implements ReceiptStrategy{
+public class ReceiptConsole implements ReceiptStrategy{
     private Customer customer;
     private Store store;
     private LineItem[] lineItems = new LineItem[0];
     private String thankYou = "Thank you for your business, please come again!";
-
+    NumberFormat nf = NumberFormat.getCurrencyInstance();
     
 
     public Customer getCustomer() {
@@ -65,10 +67,14 @@ public class RecieptConsole implements ReceiptStrategy{
         System.out.println("Store Zip: " + store.getZipCode());
         System.out.println("Customer Name: " + customer.getName());
         System.out.println("Customer No: " + customer.getCustNo());
-        System.out.println("---------------------------------------------------");
-        System.out.println("PROD # \t DESCRIPTION \t\t UNIT PRICE \t\t QTY \t SUBTOTAL");
+        System.out.println("------------------------");
+        System.out.println("PROD# \t DESCRIPTION \t\t UNIT PRICE \t QTY \t SUBTOTAL");
+        System.out.println("-----------------------------------------------------------------------");
         for (LineItem lines: lineItems){
-            System.out.println(lines.getProdID() + " \t " + lines.getProdDesc() + " \t\t " + lines.getUnitPrice() + " \t\t " + lines.getQuantity() + "\t" + lines.getSubTotal());
+            System.out.println(lines.getProdID() + " \t " + lines.getProdDesc() + " \t\t " + lines.getUnitPrice() + " \t\t " + lines.getQuantity() + "\t " + lines.getSubTotal());
         }
+        
+        System.out.println(" ");
+        System.out.println(thankYou);
     }
 }

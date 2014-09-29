@@ -16,13 +16,13 @@ public class POSRegister {
     private LineItem lineItem;
     
     public void startNewSale(Customer customer, Store store){
-        receipt = new RecieptConsole();
+        receipt = new ReceiptConsole();
         receipt.setCustomer(customer);
         receipt.setStore(store);
     }
     
     public void startNewSale(Store store){
-        receipt = new RecieptConsole();
+        receipt = new ReceiptConsole();
         receipt.setStore(store);
     }
     

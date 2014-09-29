@@ -24,7 +24,7 @@ public class Startup {
         
         register1.startNewSale(customer, store);
         register1.addItemToSale("0100", 3);
-//        register1.addItemToSale("0101", 1);
+        register1.addItemToSale("0101", 1);
 //        register1.addItemToSale("0102", 6);
         register1.finalizeSale();
     } 
