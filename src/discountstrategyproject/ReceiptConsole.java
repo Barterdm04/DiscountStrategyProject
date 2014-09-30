@@ -22,6 +22,11 @@ public class ReceiptConsole implements ReceiptStrategy{
     private LineItem[] lineItems = new LineItem[0];
     private String thankYou = "Thank you for your business, please come again!";
     NumberFormat nf = NumberFormat.getCurrencyInstance();
+
+    public ReceiptConsole(String customerNo, Store store) {
+        this.customer = findCustomer(customerNo);
+        this.store = findStore(store);
+    }
     
 
     public Customer getCustomer() {
@@ -93,5 +98,13 @@ public class ReceiptConsole implements ReceiptStrategy{
         System.out.println("TOTAL: \t\t\t\t\t\t\t " + nf.format(total));
         System.out.println(" ");
         System.out.println(thankYou);
+    }
+
+    private Customer findCustomer(String customerNo) {
+        
+    }
+
+    private Store findStore(Store store) {
+       
     }
 }

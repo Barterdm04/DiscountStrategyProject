@@ -25,18 +25,23 @@ public class FakeDatabase{
     };
     
     public final Product findProduct(String prodID){
-        Product productFound = new Product();
-//        for(int i = 0; i < products.length; i++){
-//            if (prodID.equals(products[i].getProdID())){
-//                productFound = products[i];
-//            } else {
-//                throw new IllegalArgumentException(
-//                    "error: product number not found in database"); 
-//            }
-//        }
-        return products[1];
+        Product productFound = null;
+        for(int i = 0; i < products.length; i++){
+            if (prodID.equals(products[i].getProdID())){
+                productFound = products[i];
+                break;
+            }
+        }
+        if(productFound == null) {
+            throw new IllegalArgumentException();
+        }
+        return productFound;
     }
     
-    
+//    public static void main(String[] args) {
+//        FakeDatabase db = new FakeDatabase();
+//        Product p = db.findProduct("0101");
+//        System.out.println(p.getProdDesc());
+//    }
     
 }

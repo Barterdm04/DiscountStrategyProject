@@ -19,17 +19,10 @@ public class POSRegister {
     private FakeDatabase database = new FakeDatabase();
     private LineItem lineItem;
     
-    public final void startNewSale(Customer customer, Store store){
-        receipt = new ReceiptConsole();
-        receipt.setCustomer(customer);
-        receipt.setStore(store);
+    public final void startNewSale(String customerNo, Store store){
+        receipt = new ReceiptConsole(customer, store);
     }
-    
-    public final void startNewSale(Store store){
-        receipt = new ReceiptConsole();
-        receipt.setStore(store);
-    }
-    
+        
     public final void addItemToSale(String scannedItem, int quantity){
         lineItem = new LineItem(database.findProduct(scannedItem), quantity);
         receipt.addLineItem(lineItem);
