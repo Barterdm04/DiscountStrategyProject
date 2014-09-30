@@ -16,6 +16,7 @@ import java.text.NumberFormat;
  * @version 1.00
  */
 public class ReceiptConsole implements ReceiptStrategy{
+    private double salesTax = .05;
     private Customer customer;
     private Store store;
     private LineItem[] lineItems = new LineItem[0];
@@ -66,17 +67,30 @@ public class ReceiptConsole implements ReceiptStrategy{
     
     @Override
     public final void outputReceipt(){
+        double runningSubtotal = 0;
+        double runningDiscount = 0;
+        double total = 0;
+        double taxAmt = 0;
         System.out.println("Store No: " + store.getStoreNo());
         System.out.println("Store Zip: " + store.getZipCode());
         System.out.println("Customer Name: " + customer.getName());
         System.out.println("Customer No: " + customer.getCustNo());
         System.out.println("------------------------");
-        System.out.println("PROD# \t DESCRIPTION \t\t UNIT PRICE \t QTY \t SUBTOTAL");
+        System.out.println("PROD# \t DESCRIPTION \t\t  UNIT PRICE \t QTY \t SUBTOTAL");
         System.out.println("-----------------------------------------------------------------------");
         for (LineItem lines: lineItems){
-            System.out.println(lines.getProdID() + " \t " + lines.getProdDesc() + " \t\t " + lines.getUnitPrice() + " \t\t " + lines.getQuantity() + "\t " + lines.getSubTotal());
+            System.out.println(lines.getProdID() + " \t " + lines.getProdDesc() + " \t  " + nf.format(lines.getUnitPrice()) + " \t " + lines.getQuantity() + "\t " + nf.format(lines.getSubTotal()));
+            runningSubtotal += lines.getSubTotal();
+            runningDiscount += lines.getAmountSaved();
         }
-        
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("SUBTOTAL: \t\t\t\t\t\t " + nf.format(runningSubtotal));
+        System.out.println("You Saved: \t\t\t\t\t\t " + nf.format(runningDiscount));
+        System.out.println("-----------------------------------------------------------------------");
+        taxAmt = salesTax * runningSubtotal;
+        total = runningSubtotal + taxAmt;
+        System.out.println("SALES TAX (5%): \t\t\t\t\t " + nf.format(taxAmt));
+        System.out.println("TOTAL: \t\t\t\t\t\t\t " + nf.format(total));
         System.out.println(" ");
         System.out.println(thankYou);
     }

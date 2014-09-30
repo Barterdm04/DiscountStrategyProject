@@ -15,7 +15,6 @@ import java.text.NumberFormat;
 public class LineItem {
     private Product product;
     private int quantity;
-    //NumberFormat nf = NumberFormat.getCurrencyInstance();
     
     public LineItem(Product product, int quantity) {
         this.product = product;

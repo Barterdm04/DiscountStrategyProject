@@ -26,15 +26,15 @@ public class FakeDatabase{
     
     public final Product findProduct(String prodID){
         Product productFound = new Product();
-        for(int i = 0; i < products.length; i++){
-            if (prodID.equals(products[i].getProdID())){
-                productFound = products[i];
-            } else {
-                throw new IllegalArgumentException(
-                    "error: product number not found in database"); 
-            }
-        }
-        return productFound;
+//        for(int i = 0; i < products.length; i++){
+//            if (prodID.equals(products[i].getProdID())){
+//                productFound = products[i];
+//            } else {
+//                throw new IllegalArgumentException(
+//                    "error: product number not found in database"); 
+//            }
+//        }
+        return products[1];
     }
     
     
