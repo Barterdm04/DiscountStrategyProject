@@ -6,9 +6,10 @@
 
 package discountstrategyproject;
 
-/**
+/**This interface is a structure for simulated receipt outputs in a retail sales organization
  *
  * @author dbarter1
+ * @version 1.00
  */
 public interface ReceiptStrategy {
     public abstract void addLineItem(String itemNum, int quantity);

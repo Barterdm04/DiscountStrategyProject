@@ -6,11 +6,15 @@
 
 package discountstrategyproject;
 
-/**
+/**An interface for types of discounts for a simulated retail sales organization
  *
  * @author dbarter1
+ * @version 1.00
  */
 public interface DiscountStrategy {
+    /**
+     * 
+     * @return - returns a double when you implement this method 
+     */
     public abstract double getDiscount();
-    public abstract void setDiscount(double discount);
 }

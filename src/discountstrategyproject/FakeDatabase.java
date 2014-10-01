@@ -35,6 +35,11 @@ public class FakeDatabase{
         new Store("303", "45902")
     };
     
+    /**Finds out if the product number given matches a product number within the database
+     * 
+     * @param prodID - identifier for the product number
+     * @return - returns a product object
+     */
     public final Product findProduct(String prodID){
         Product productFound = null;
         for(int i = 0; i < products.length; i++){
@@ -48,7 +53,11 @@ public class FakeDatabase{
         }
         return productFound;
     }
-    
+    /**Finds out if the store number given matches a store number within the database
+     * 
+     * @param storeNo - identifier for the store number
+     * @return - returns a store object
+     */
     public final Store findStore(String storeNo){
         Store storeFound = null;
         for(int i = 0; i < stores.length; i++){
@@ -62,7 +71,11 @@ public class FakeDatabase{
         }
         return storeFound;
     }
-    
+    /**Finds out if the customer number given matches a customer number within the database
+     * 
+     * @param custNo - identifier for the customer number
+     * @return - returns a customer object
+     */
     public final Customer findCustomer(String custNo){
         Customer custFound = null;
         for(int i = 0; i < customers.length; i++){
@@ -77,10 +90,5 @@ public class FakeDatabase{
         return custFound;
     }
     
-//    public static void main(String[] args) {
-//        FakeDatabase db = new FakeDatabase();
-//        Product p = db.findProduct("0101");
-//        System.out.println(p.getProdDesc());
-//    }
     
 }

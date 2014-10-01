@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 
 /**This class represents a simulation of a receipt object for a retail sales organization
  * 
- *Note: JavaDoc documentation is incomplete!
+ *
  * 
  * @author Dylan Barter
  * @version 1.00
@@ -25,46 +25,79 @@ public class ReceiptConsole implements ReceiptStrategy{
     private FakeDatabase database = new FakeDatabase();
     NumberFormat nf = NumberFormat.getCurrencyInstance();
 
+    /**Constructor method for a receipt that prints to the console
+     * 
+     * @param customerNo - identifier for the customer id number for the sale
+     * @param storeNo  - identifier for the store id number for the sale
+     */
     public ReceiptConsole(String customerNo, String storeNo) {  
         this.customer = database.findCustomer(customerNo);
         this.store = database.findStore(storeNo);
     }
     
-
+    /**
+     * 
+     * @return - returns the customer associated with the receipt 
+     */
     public Customer getCustomer() {
         return customer;
     }
-
+    /**This method sets a new customer to the receipt 
+     * 
+     * @param customer - identifier for the customer object
+     */
     public final void setCustomer(Customer customer) {
         this.customer = customer;
     }
-
+    /**
+     * 
+     * @return - returns the store associated with the receipt 
+     */
     public final Store getStore() {
         return store;
     }
-
+    /**This method sets a new store to the receipt
+     * 
+     * @param store - identifier for the store object
+     */
     public final void setStore(Store store) {
         this.store = store;
     }
-
+    /**
+     * 
+     * @return - returns the array of line items currently on the receipt 
+     */
     public final LineItem[] getLineItems() {
         return lineItems;
     }
-
+    /**This method adds a line item to the receipt
+     * 
+     * @param itemNum - identifier for the product id number
+     * @param quantity - identifier for the quantity for this product
+     */
     @Override
     public final void addLineItem(String itemNum, int quantity) {
         LineItem lineItem = new LineItem(database.findProduct(itemNum), quantity);
         addToArray(lineItem);
     }
-
+    /**
+     * 
+     * @return -  returns the current Thank You message assigned to the receipt 
+     */
     public final String getThankYou() {
         return thankYou;
     }
-
+    /**This method will set a new thank you message for the receipt
+     * 
+     * @param thankYou - identifier for the thank you message
+     */
     public final void setThankYou(String thankYou) {
         this.thankYou = thankYou;
     }
-    
+    /**This method allows you to add line items to the line items array
+     * 
+     * @param item - identifier for the line item being added
+     */
     private final void addToArray(final LineItem item) {        
         // needs validation        
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
@@ -72,7 +105,9 @@ public class ReceiptConsole implements ReceiptStrategy{
         tempItems[lineItems.length] = item;        
         lineItems = tempItems;    
     }
-    
+    /**
+     * This method prints the receipt to the console
+     */
     @Override
     public final void outputReceipt(){
         double runningSubtotal = 0;

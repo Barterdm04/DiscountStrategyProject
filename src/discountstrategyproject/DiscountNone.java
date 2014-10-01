@@ -5,18 +5,20 @@
  */
 package discountstrategyproject;
 
-/**
+/**A simulated discount value of zero for a retail sales organization
  *
  * @author DB7
+ * @version 1.00
  */
 public class DiscountNone implements DiscountStrategy{
     private static final double NO_DISCOUNT = 0.0;
+    /**
+     * 
+     * @return - returns the value of the discount strategy type
+     */
     @Override
     public final double getDiscount(){
         return NO_DISCOUNT;
     }
-    @Override
-    public final void setDiscount(double discount){
-        
-    }
+
 }
