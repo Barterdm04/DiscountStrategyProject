@@ -6,7 +6,8 @@
 
 package discountstrategyproject;
 
-/**This class represents a simulation of a product and customer database in a retail sales organization
+/**
+ * This class represents a simulation of a product and customer database in a retail sales organization
  * 
  *Note: JavaDoc documentation is incomplete!
  * 
@@ -15,13 +16,13 @@ package discountstrategyproject;
  */
 
 public class FakeDatabase implements DataAccessStrategy{
-    private DiscountStrategy NoDisc = new DiscountNone();
-    private DiscountStrategy FlatDisc = new DiscountFlatRate();
+    private DiscountStrategy noDisc = new DiscountNone();
+    private DiscountStrategy flatDisc = new DiscountFlatRate();
     
     private Product[] products = {
-        new Product("0100", "Pair of Levi's Jeans", 45.99, NoDisc),
-        new Product("0101", "Pair of Adidas Socks", 5.99, FlatDisc),
-        new Product("0102", "Nike T-Shirt", 19.99, FlatDisc)    
+        new Product("0100", "Pair of Levi's Jeans", 45.99, noDisc),
+        new Product("0101", "Pair of Adidas Socks", 5.99, flatDisc),
+        new Product("0102", "Nike Graphic T-Shirt", 19.99, flatDisc)    
     };
     
     private Customer[] customers = {
@@ -35,7 +36,8 @@ public class FakeDatabase implements DataAccessStrategy{
         new Store("303", "45902")
     };
     
-    /**Finds out if the product number given matches a product number within the database
+    /**
+     * Finds out if the product number given matches a product number within the database
      * 
      * @param prodID - identifier for the product number
      * @return - returns a product object
@@ -55,7 +57,8 @@ public class FakeDatabase implements DataAccessStrategy{
         return productFound;
     }
     
-    /**Finds out if the store number given matches a store number within the database
+    /**
+     * Finds out if the store number given matches a store number within the database
      * 
      * @param storeNo - identifier for the store number
      * @return - returns a store object
@@ -74,7 +77,8 @@ public class FakeDatabase implements DataAccessStrategy{
         return storeFound;
     }
     
-    /**Finds out if the customer number given matches a customer number within the database
+    /**
+     * Finds out if the customer number given matches a customer number within the database
      * 
      * @param custNo - identifier for the customer number
      * @return - returns a customer object

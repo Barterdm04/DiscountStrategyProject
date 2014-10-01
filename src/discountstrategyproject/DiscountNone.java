@@ -5,7 +5,8 @@
  */
 package discountstrategyproject;
 
-/**A simulated discount value of zero for a retail sales organization
+/**
+ * A simulated discount value of zero for a retail sales organization
  *
  * @author DB7
  * @version 1.00

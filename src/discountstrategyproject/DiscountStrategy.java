@@ -6,7 +6,8 @@
 
 package discountstrategyproject;
 
-/**An interface for types of discounts for a simulated retail sales organization
+/**
+ * An interface for types of discounts for a simulated retail sales organization
  *
  * @author dbarter1
  * @version 1.00

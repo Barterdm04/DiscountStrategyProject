@@ -17,7 +17,8 @@ public class Store {
     private String storeNo;
     private String zipCode;
     
-    /**Constructor method for a store 
+    /**
+     * Constructor method for a store 
      * 
      * @param storeNo - identifier for the store's id number
      * @param zipCode - identifier for the store zip code
@@ -35,7 +36,8 @@ public class Store {
         return storeNo;
     }
     
-    /**This method sets a new store number for a store
+    /**
+     * This method sets a new store number for a store
      * 
      * @param storeNo - identifier for the store's id number
      */
@@ -54,7 +56,8 @@ public class Store {
         return zipCode;
     }
     
-    /**This method sets a new zip code to the store
+    /**
+     * This method sets a new zip code to the store
      * 
      * @param zipCode - identifier for the store zip code
      */

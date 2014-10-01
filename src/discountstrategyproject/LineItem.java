@@ -1,7 +1,8 @@
 
 package discountstrategyproject;
 
-/**This class represents a simulated line item for a receipt in a retail sales organization
+/**
+ * This class represents a simulated line item for a receipt in a retail sales organization
  *
  * @author dbarter1
  * @version 1.00
@@ -11,7 +12,8 @@ public class LineItem {
     private Product product;
     private int quantity;
     
-    /**The constructor method for a line item
+    /**
+     * The constructor method for a line item
      * 
      * @param product - unique identifier for the product object
      * @param quantity - unique identifier for the quantity
@@ -65,7 +67,7 @@ public class LineItem {
     
     /**
      * 
-     * @return - returns the quantity within the lineitem 
+     * @return - returns the quantity within the line item 
      */
     public final int getQuantity() {
         return quantity;

@@ -7,6 +7,7 @@
 package discountstrategyproject;
 
 /**
+ * This is the startup class to initialize the discount strategy project
  *
  * @author dbarter1
  */
@@ -24,7 +25,7 @@ public class Startup {
         register1.startNewSale(customerNo, storeNo);
         register1.addItemToSale("0100", 3);
         register1.addItemToSale("0101", 1);
-//        register1.addItemToSale("0102", 6);
+        register1.addItemToSale("0102", 6);
         register1.finalizeSale();
     } 
     

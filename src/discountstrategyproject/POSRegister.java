@@ -6,7 +6,8 @@
 
 package discountstrategyproject;
 
-/**This class represents a simulation of a Point of Sales Terminal in a retail sales organization
+/**
+ * This class represents a simulation of a Point of Sales Terminal in a retail sales organization
  * 
  *Note: JavaDoc documentation is incomplete!
  * 
@@ -17,7 +18,8 @@ package discountstrategyproject;
 public class POSRegister {
     private ReceiptStrategy receipt;
     
-    /** This method initializes the sales receipt for a new sale
+    /** 
+     * This method initializes the sales receipt for a new sale
      * 
      * @param customerNo - identifier for the customer number of the customer
      * @param storeNo - identifier for the store number of the store
@@ -26,7 +28,8 @@ public class POSRegister {
         receipt = new ReceiptConsole(customerNo, storeNo);
     }
     
-    /**This method adds an item to the sale using the item number and the quantity
+    /**
+     * This method adds an item to the sale using the item number and the quantity
      * 
      * @param scannedItem - identifier for the product ID code
      * @param quantity - identifier for the quantity of the product
@@ -35,7 +38,8 @@ public class POSRegister {
         receipt.addLineItem(scannedItem, quantity);
     }
     
-    /**This method will output the receipt when the sale has been signaled as finalized
+    /**
+     * This method will output the receipt when the sale has been signaled as finalized
      * 
      */
     

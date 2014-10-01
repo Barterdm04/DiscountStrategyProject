@@ -6,7 +6,8 @@
 
 package discountstrategyproject;
 
-/**This interface is a structure for simulated receipt outputs in a retail sales organization
+/**
+ * This interface is a structure for simulated receipt outputs in a retail sales organization
  *
  * @author dbarter1
  * @version 1.00

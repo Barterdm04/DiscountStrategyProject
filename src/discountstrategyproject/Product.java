@@ -1,7 +1,8 @@
 
 package discountstrategyproject;
 
-/**This class represents a simulation of a product in a retail sales organization
+/**
+ * This class represents a simulation of a product in a retail sales organization
  * 
  *Note: JavaDoc documentation is incomplete!
  * 
@@ -12,20 +13,21 @@ public class Product {
     private String prodID;
     private String prodDesc;
     private double unitPrice;
-    private DiscountStrategy DiscountType;
+    private DiscountStrategy discountType;
         
-    /**Constructor method for a Product
+    /**
+     * Constructor method for a Product
      * 
      * @param prodID - unique identifier for the product ID number
      * @param prodDesc - identifier for the description of the product
      * @param unitPrice - identifier for the unit price of the product
-     * @param Discount - identifier for the type of discount specified for the product
+     * @param discount - identifier for the type of discount specified for the product
      */
-    public Product(String prodID, String prodDesc, double unitPrice, DiscountStrategy Discount){
+    public Product(String prodID, String prodDesc, double unitPrice, DiscountStrategy discount){
         this.prodID = prodID;
         this.prodDesc = prodDesc;
         this.unitPrice = unitPrice;
-        this.DiscountType = Discount;
+        this.discountType = discount;
     }
     
     /**
@@ -91,7 +93,7 @@ public class Product {
      * @return - returns the current discount in double format 
      */
     public final double getDiscount() {
-        return DiscountType.getDiscount();
+        return discountType.getDiscount();
     }
     
     /**
@@ -99,15 +101,15 @@ public class Product {
      * @return -returns the current discount strategy type for this product 
      */
     public final DiscountStrategy getDiscountType(){
-        return DiscountType;
+        return discountType;
     }
     
     /**
      * Sets a new discountStrategy type for the product
-     * @param DiscountType - Unique identifier for the type of discount strategy
+     * @param discountType - Unique identifier for the type of discount strategy
      */
-    public final void setDiscountType(DiscountStrategy DiscountType) {
-        this.DiscountType = DiscountType;
+    public final void setDiscountType(DiscountStrategy discountType) {
+        this.discountType = discountType;
     }
     
 }

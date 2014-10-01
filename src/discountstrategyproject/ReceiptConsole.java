@@ -8,7 +8,8 @@ package discountstrategyproject;
 
 import java.text.NumberFormat;
 
-/**This class represents a simulation of a receipt object for a retail sales organization
+/**
+ * This class represents a simulation of a receipt object for a retail sales organization
  * 
  *
  * 
@@ -27,7 +28,8 @@ public class ReceiptConsole implements ReceiptStrategy{
     
     NumberFormat nf = NumberFormat.getCurrencyInstance();
 
-    /**Constructor method for a receipt that prints to the console
+    /**
+     * Constructor method for a receipt that prints to the console
      * 
      * @param customerNo - identifier for the customer id number for the sale
      * @param storeNo  - identifier for the store id number for the sale
@@ -45,7 +47,8 @@ public class ReceiptConsole implements ReceiptStrategy{
         return customer;
     }
     
-    /**This method sets a new customer to the receipt 
+    /**
+     * This method sets a new customer to the receipt 
      * 
      * @param customer - identifier for the customer object
      */
@@ -61,7 +64,8 @@ public class ReceiptConsole implements ReceiptStrategy{
         return store;
     }
     
-    /**This method sets a new store to the receipt
+    /**
+     * This method sets a new store to the receipt
      * 
      * @param store - identifier for the store object
      */
@@ -77,7 +81,8 @@ public class ReceiptConsole implements ReceiptStrategy{
         return lineItems;
     }
     
-    /**This method adds a line item to the receipt
+    /**
+     * This method adds a line item to the receipt
      * 
      * @param itemNum - identifier for the product id number
      * @param quantity - identifier for the quantity for this product
@@ -96,7 +101,8 @@ public class ReceiptConsole implements ReceiptStrategy{
         return thankYou;
     }
     
-    /**This method will set a new thank you message for the receipt
+    /**
+     * This method will set a new thank you message for the receipt
      * 
      * @param thankYou - identifier for the thank you message
      */
@@ -104,12 +110,12 @@ public class ReceiptConsole implements ReceiptStrategy{
         this.thankYou = thankYou;
     }
     
-    /**This method allows you to add line items to the line items array
+    /**
+     * This method allows you to add line items to the line items array
      * 
      * @param item - identifier for the line item being added
      */
-    private final void addToArray(final LineItem item) {        
-        // needs validation        
+    private final void addToArray(final LineItem item) {             
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length); 
         tempItems[lineItems.length] = item;        

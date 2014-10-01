@@ -6,14 +6,16 @@ package discountstrategyproject;
  * @version 1.00
  */
 public class Customer {
-    String custNo;
-    String fName;
-    String lName;
-    String address;
-    String city;
-    String state;
-    String zip;
-    String phone;
+    private String custNo;
+    private String fName;
+    private String lName;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+    private String phone;
+    private int custNoSize = 5;
+    
 
     /**
      * The constructor method for a Customer
@@ -45,12 +47,13 @@ public class Customer {
         return custNo;
     }
     
-    /**Sets the customer's customer number
+    /**
+     * Sets the customer's customer number
      * 
      * @param custNo - identifier for the customer number
      */
     public final void setCustNo(String custNo) {
-        if(custNo.length() != 5){
+        if(custNo.length() != custNoSize){
             throw new IllegalArgumentException();
         }
         this.custNo = custNo;
@@ -64,7 +67,8 @@ public class Customer {
         return fName;
     }
     
-    /**Sets the customer's first name
+    /**
+     * Sets the customer's first name
      * 
      * @param fname - identifier for first name
      */
@@ -145,6 +149,7 @@ public class Customer {
      * @param state - identifier for customer's state
      */
     public void setState(String state) {
+        //Verify state Abbreviation (2) places
         if(state == null || state.isEmpty() || state.length() > 2){
             throw new IllegalArgumentException();
         }
