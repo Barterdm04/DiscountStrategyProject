@@ -36,6 +36,7 @@ public class Customer {
         this.zip = zip;
         this.phone = phone;
     }
+    
     /**
      * 
      * @return - return the current customer number for the customer 
@@ -43,6 +44,7 @@ public class Customer {
     public final String getCustNo() {
         return custNo;
     }
+    
     /**Sets the customer's customer number
      * 
      * @param custNo - identifier for the customer number
@@ -53,6 +55,7 @@ public class Customer {
         }
         this.custNo = custNo;
     }
+    
     /**
      * 
      * @return - return the current first name listed for the customer 
@@ -60,6 +63,7 @@ public class Customer {
     public final String getFName() {
         return fName;
     }
+    
     /**Sets the customer's first name
      * 
      * @param fname - identifier for first name
@@ -70,6 +74,7 @@ public class Customer {
         }
         this.fName = fname;
     }
+    
     /**
      * 
      * @return - returns the current last name for the customer 
@@ -77,6 +82,7 @@ public class Customer {
     public final String getLName() {
         return lName;
     }
+    
     /**
      * Sets the customer's last name 
      * @param lname - identifier for last name
@@ -87,6 +93,7 @@ public class Customer {
         }
         this.lName = lname;
     }
+    
     /**
      * 
      * @return -  returns the current address line listed for the customer 
@@ -94,6 +101,7 @@ public class Customer {
     public final String getAddress() {
         return address;
     }
+    
     /**
      * Sets the customer's address line
      * @param address - identifier for address line
@@ -104,6 +112,7 @@ public class Customer {
         }
         this.address = address;
     }
+    
     /**
      * 
      * @return- returns the current city listed for the customer 
@@ -111,6 +120,7 @@ public class Customer {
     public String getCity() {
         return city;
     }
+    
     /**
      * Sets the customer's city
      * @param city - identifier for the customer's city
@@ -121,6 +131,7 @@ public class Customer {
         }
         this.city = city;
     }
+    
     /**
      * 
      * @return - returns the current state abbreviation listed for the customer 
@@ -128,6 +139,7 @@ public class Customer {
     public String getState() {
         return state;
     }
+    
     /**
      * Sets the customers state abbreviation
      * @param state - identifier for customer's state
@@ -138,6 +150,7 @@ public class Customer {
         }
         this.state = state;
     }
+    
     /**
      * 
      * @return - returns the current zip code listed for the customer 
@@ -145,6 +158,7 @@ public class Customer {
     public String getZip() {
         return zip;
     }
+    
     /**
      * Sets the customer's zip code
      * @param zip - identifier for the customer's zip code
@@ -155,6 +169,7 @@ public class Customer {
         }
         this.zip = zip;
     }
+    
     /**
      * 
      * @return - returns the current phone number listed for the customer 
@@ -162,6 +177,7 @@ public class Customer {
     public String getPhone() {
         return phone;
     }
+    
     /**
      * Sets the customer's phone number
      * @param phone - identifier for customer phone number

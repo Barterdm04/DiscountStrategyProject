@@ -12,6 +12,7 @@ package discountstrategyproject;
  */
 public class DiscountNone implements DiscountStrategy{
     private static final double NO_DISCOUNT = 0.0;
+    
     /**
      * 
      * @return - returns the value of the discount strategy type

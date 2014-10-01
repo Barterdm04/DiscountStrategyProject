@@ -25,6 +25,7 @@ public class POSRegister {
     public final void startNewSale(String customerNo, String storeNo){
         receipt = new ReceiptConsole(customerNo, storeNo);
     }
+    
     /**This method adds an item to the sale using the item number and the quantity
      * 
      * @param scannedItem - identifier for the product ID code
@@ -33,6 +34,7 @@ public class POSRegister {
     public final void addItemToSale(String scannedItem, int quantity){
         receipt.addLineItem(scannedItem, quantity);
     }
+    
     /**This method will output the receipt when the sale has been signaled as finalized
      * 
      */

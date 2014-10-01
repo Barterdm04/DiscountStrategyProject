@@ -10,6 +10,7 @@ package discountstrategyproject;
 public class LineItem {
     private Product product;
     private int quantity;
+    
     /**The constructor method for a line item
      * 
      * @param product - unique identifier for the product object
@@ -19,6 +20,7 @@ public class LineItem {
         this.product = product;
         this.quantity = quantity;
     }
+    
     /**
      * 
      * @return - returns the product id of the line item's product 
@@ -26,6 +28,7 @@ public class LineItem {
     public final String getProdID(){
         return product.getProdID();
     }
+    
     /**
      * 
      * @return -  returns the product description of the item's product 
@@ -33,6 +36,7 @@ public class LineItem {
     public final String getProdDesc(){
         return product.getProdDesc();
     }
+    
     /**
      * 
      * @return -  returns the product unit price of the item's product 
@@ -40,6 +44,7 @@ public class LineItem {
     public final double getUnitPrice(){
         return product.getUnitPrice();
     }
+    
     /**
      * 
      * @return - returns the subtotal of the line item
@@ -49,6 +54,7 @@ public class LineItem {
         subtotal -= (subtotal * product.getDiscount());
         return subtotal;
     }
+    
     /**
      * 
      * @return returns the amount of money saved by discounts in the line item 
@@ -56,6 +62,7 @@ public class LineItem {
     public final double getAmountSaved(){
         return (quantity * product.getUnitPrice() * product.getDiscount());
     }
+    
     /**
      * 
      * @return - returns the quantity within the lineitem 

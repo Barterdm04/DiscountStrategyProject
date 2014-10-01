@@ -27,6 +27,7 @@ public class Product {
         this.unitPrice = unitPrice;
         this.DiscountType = Discount;
     }
+    
     /**
      * 
      * @return - returns the current product ID number for this product 
@@ -54,6 +55,7 @@ public class Product {
     public final String getProdDesc() {
         return prodDesc;
     }
+    
     /**
      * Sets the product description for this product
      * @param prodDesc - the unique identifier for this product description
@@ -64,6 +66,7 @@ public class Product {
         }
         this.prodDesc = prodDesc;
     }
+    
     /**
      * 
      * @return - returns the current unit price of this product 
@@ -82,6 +85,7 @@ public class Product {
         }
         this.unitPrice = unitPrice;
     }
+    
     /**
      * 
      * @return - returns the current discount in double format 
@@ -89,6 +93,7 @@ public class Product {
     public final double getDiscount() {
         return DiscountType.getDiscount();
     }
+    
     /**
      * 
      * @return -returns the current discount strategy type for this product 

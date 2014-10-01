@@ -14,7 +14,7 @@ package discountstrategyproject;
  * @version 1.00
  */
 
-public class FakeDatabase{
+public class FakeDatabase implements DataAccessStrategy{
     private DiscountStrategy NoDisc = new DiscountNone();
     private DiscountStrategy FlatDisc = new DiscountFlatRate();
     
@@ -40,6 +40,7 @@ public class FakeDatabase{
      * @param prodID - identifier for the product number
      * @return - returns a product object
      */
+    
     public final Product findProduct(String prodID){
         Product productFound = null;
         for(int i = 0; i < products.length; i++){
@@ -53,6 +54,7 @@ public class FakeDatabase{
         }
         return productFound;
     }
+    
     /**Finds out if the store number given matches a store number within the database
      * 
      * @param storeNo - identifier for the store number
@@ -71,6 +73,7 @@ public class FakeDatabase{
         }
         return storeFound;
     }
+    
     /**Finds out if the customer number given matches a customer number within the database
      * 
      * @param custNo - identifier for the customer number

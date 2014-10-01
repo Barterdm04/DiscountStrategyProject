@@ -26,6 +26,7 @@ public class Store {
         this.storeNo = storeNo;
         this.zipCode = zipCode;
     }
+    
     /**
      * 
      * @return - returns the store number associated with the store 
@@ -33,6 +34,7 @@ public class Store {
     public final String getStoreNo() {
         return storeNo;
     }
+    
     /**This method sets a new store number for a store
      * 
      * @param storeNo - identifier for the store's id number
@@ -43,6 +45,7 @@ public class Store {
         }
         this.storeNo = storeNo;
     }
+    
     /**
      * 
      * @return -  returns the zip code associated with the store 
@@ -50,6 +53,7 @@ public class Store {
     public final String getZipCode() {
         return zipCode;
     }
+    
     /**This method sets a new zip code to the store
      * 
      * @param zipCode - identifier for the store zip code

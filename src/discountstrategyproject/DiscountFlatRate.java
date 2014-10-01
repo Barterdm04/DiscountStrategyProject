@@ -21,6 +21,7 @@ public class DiscountFlatRate implements DiscountStrategy{
     public final double getDiscount(){
         return discount;
     }
+    
     /**Sets a new discount value for this discount
      * 
      * @param discount - the identifier for the discount value

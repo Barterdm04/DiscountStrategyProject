@@ -6,16 +6,14 @@
 
 package discountstrategyproject;
 
-/**An interface for types of discounts for a simulated retail sales organization
+/**
+ * An interface for various database types
  *
  * @author dbarter1
  * @version 1.00
  */
-public interface DiscountStrategy {
-    
-    /**
-     * 
-     * @return - returns a double when you implement this method 
-     */
-    public abstract double getDiscount();
+public interface DataAccessStrategy {
+    public abstract Product findProduct(String productNo);
+    public abstract Customer findCustomer(String custNo);
+    public abstract Store findStore(String storeNo);
 }
