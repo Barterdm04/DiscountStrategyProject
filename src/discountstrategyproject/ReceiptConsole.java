@@ -19,7 +19,7 @@ import java.text.NumberFormat;
 public class ReceiptConsole implements ReceiptStrategy{
     private double salesTax = .05;
     
-    private FakeDatabase database = new FakeDatabase();
+    private DataAccessStrategy database = new FakeDatabase();
     private LineItem[] lineItems = new LineItem[0];
     
     private Customer customer;
