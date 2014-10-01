@@ -11,10 +11,7 @@ package discountstrategyproject;
  * @author dbarter1
  */
 public interface ReceiptStrategy {
-    public abstract void addLineItem(LineItem lineItem);
+    public abstract void addLineItem(String itemNum, int quantity);
     public abstract void outputReceipt();
-    public abstract Customer getCustomer();
-    public abstract Store getStore();
-    public abstract void setCustomer(Customer customer);
-    public abstract void setStore(Store store);
+    
 }

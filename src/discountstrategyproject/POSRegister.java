@@ -16,16 +16,13 @@ package discountstrategyproject;
 
 public class POSRegister {
     private ReceiptStrategy receipt;
-    private FakeDatabase database = new FakeDatabase();
-    private LineItem lineItem;
     
-    public final void startNewSale(String customerNo, Store store){
-        receipt = new ReceiptConsole(customer, store);
+    public final void startNewSale(String customerNo, String store){
+        receipt = new ReceiptConsole(customerNo, store);
     }
         
     public final void addItemToSale(String scannedItem, int quantity){
-        lineItem = new LineItem(database.findProduct(scannedItem), quantity);
-        receipt.addLineItem(lineItem);
+        receipt.addLineItem(scannedItem, quantity);
     }
     public final void finalizeSale(){
         receipt.outputReceipt();

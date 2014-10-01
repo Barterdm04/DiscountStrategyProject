@@ -17,15 +17,17 @@ import java.text.NumberFormat;
  */
 public class ReceiptConsole implements ReceiptStrategy{
     private double salesTax = .05;
+    
     private Customer customer;
     private Store store;
     private LineItem[] lineItems = new LineItem[0];
     private String thankYou = "Thank you for your business, please come again!";
+    private FakeDatabase database = new FakeDatabase();
     NumberFormat nf = NumberFormat.getCurrencyInstance();
 
-    public ReceiptConsole(String customerNo, Store store) {
-        this.customer = findCustomer(customerNo);
-        this.store = findStore(store);
+    public ReceiptConsole(String customerNo, String storeNo) {  
+        this.customer = database.findCustomer(customerNo);
+        this.store = database.findStore(storeNo);
     }
     
 
@@ -50,7 +52,8 @@ public class ReceiptConsole implements ReceiptStrategy{
     }
 
     @Override
-    public final void addLineItem(LineItem lineItem) {
+    public final void addLineItem(String itemNum, int quantity) {
+        LineItem lineItem = new LineItem(database.findProduct(itemNum), quantity);
         addToArray(lineItem);
     }
 
@@ -78,7 +81,7 @@ public class ReceiptConsole implements ReceiptStrategy{
         double taxAmt = 0;
         System.out.println("Store No: " + store.getStoreNo());
         System.out.println("Store Zip: " + store.getZipCode());
-        System.out.println("Customer Name: " + customer.getName());
+        System.out.println("Customer Name: " + customer.getLName() + ", " + customer.getFName());
         System.out.println("Customer No: " + customer.getCustNo());
         System.out.println("------------------------");
         System.out.println("PROD# \t DESCRIPTION \t\t  UNIT PRICE \t QTY \t SUBTOTAL");
@@ -100,11 +103,4 @@ public class ReceiptConsole implements ReceiptStrategy{
         System.out.println(thankYou);
     }
 
-    private Customer findCustomer(String customerNo) {
-        
-    }
-
-    private Store findStore(Store store) {
-       
-    }
 }

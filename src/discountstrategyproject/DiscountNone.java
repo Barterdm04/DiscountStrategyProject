@@ -10,13 +10,13 @@ package discountstrategyproject;
  * @author DB7
  */
 public class DiscountNone implements DiscountStrategy{
-    private double discount = 0.0;
+    private static final double NO_DISCOUNT = 0.0;
     @Override
     public final double getDiscount(){
-        return discount;
+        return NO_DISCOUNT;
     }
     @Override
     public final void setDiscount(double discount){
-        this.discount = discount;
+        
     }
 }

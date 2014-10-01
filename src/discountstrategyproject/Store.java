@@ -27,6 +27,9 @@ public class Store {
     }
 
     public final void setStoreNo(String storeNo) {
+        if(storeNo.length() != 5){
+            throw new IllegalArgumentException();
+        }
         this.storeNo = storeNo;
     }
 
@@ -35,9 +38,9 @@ public class Store {
     }
 
     public final void setZipCode(String zipCode) {
+        if(zipCode.length() != 5){
+            throw new IllegalArgumentException();
+        }
         this.zipCode = zipCode;
     }
-    
-    
-    
 }

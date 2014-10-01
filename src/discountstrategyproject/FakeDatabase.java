@@ -24,6 +24,17 @@ public class FakeDatabase{
         new Product("0102", "Nike T-Shirt", 19.99, FlatDisc)    
     };
     
+    private Customer[] customers = {
+        new Customer("01104", "Bill", "Franklin", "123 Fake St.", "Milwaukee", "WI", "53020", "414-555-1122"),
+        new Customer("02204", "Nancy", "Williams", "33 Sell St.", "Minneapolis", "MN", "33022", "303-333-1111")
+    };
+    
+    private Store[] stores = {
+        new Store("233", "53051"),
+        new Store("234", "53022"),
+        new Store("303", "45902")
+    };
+    
     public final Product findProduct(String prodID){
         Product productFound = null;
         for(int i = 0; i < products.length; i++){
@@ -36,6 +47,34 @@ public class FakeDatabase{
             throw new IllegalArgumentException();
         }
         return productFound;
+    }
+    
+    public final Store findStore(String storeNo){
+        Store storeFound = null;
+        for(int i = 0; i < stores.length; i++){
+            if (storeNo.equals(stores[i].getStoreNo())){
+                storeFound = stores[i];
+                break;
+            }
+        }
+        if(storeFound == null) {
+            throw new IllegalArgumentException();
+        }
+        return storeFound;
+    }
+    
+    public final Customer findCustomer(String custNo){
+        Customer custFound = null;
+        for(int i = 0; i < customers.length; i++){
+            if (custNo.equals(customers[i].getCustNo())){
+                custFound = customers[i];
+                break;
+            }
+        }
+        if(custFound == null) {
+            throw new IllegalArgumentException();
+        }
+        return custFound;
     }
     
 //    public static void main(String[] args) {
