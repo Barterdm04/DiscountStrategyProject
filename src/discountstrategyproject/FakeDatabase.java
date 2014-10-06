@@ -43,6 +43,7 @@ public class FakeDatabase implements DataAccessStrategy{
      * @return - returns a product object
      */
     
+    @Override
     public final Product findProduct(String prodID){
         Product productFound = null;
         for(int i = 0; i < products.length; i++){
@@ -63,6 +64,7 @@ public class FakeDatabase implements DataAccessStrategy{
      * @param storeNo - identifier for the store number
      * @return - returns a store object
      */
+    @Override
     public final Store findStore(String storeNo){
         Store storeFound = null;
         for(int i = 0; i < stores.length; i++){
@@ -83,6 +85,7 @@ public class FakeDatabase implements DataAccessStrategy{
      * @param custNo - identifier for the customer number
      * @return - returns a customer object
      */
+    @Override
     public final Customer findCustomer(String custNo){
         Customer custFound = null;
         for(int i = 0; i < customers.length; i++){
